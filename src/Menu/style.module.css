@@ -1,0 +1,18 @@
+.menu{
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+.menu__item{
+    padding: 4px 10px 8px 20px;
+ 
+}
+
+.menu__item:hover {
+    cursor: pointer;
+    transition: color 0.01s ease;
+    color: rgb(97, 96, 96);
+    background-color: #f1eeee;
+    text-decoration: underline;
+
+}
