@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import { MenuSide } from './Menu';
 import logo from '../src/img/unnamed.jpg'
+import { CardSite } from './Card';
 
 class App extends React.Component {
 
@@ -20,6 +21,8 @@ render() {
     {id: 10, type: "tourism", label: "Туризм, отдых, спорт"},
     {id: 11, type: "health", label: "Здоровье, медтехника"},
 ];
+
+
   return (
     <div className="App">
       <header >
@@ -31,6 +34,11 @@ render() {
         <img src = {logo} alt = "painting"  width = "1160px"/>
       </div>
       
+      </section>
+      <section className = "second_section">
+        <CardSite label = "Набор обложек для тетрадей" price = "5,15"/>
+        <CardSite label = "Kovric" price = "5,15"/>
+        <CardSite label = "Kovric" price = "5,15"/>
       </section>
     </div>
   );

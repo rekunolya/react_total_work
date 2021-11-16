@@ -17,9 +17,7 @@ export class MenuSide extends React.Component<MenuProps> {
                    <ul>
                    {this.props.categories.map((item)=>{
                        return (
-                           
-                               <li className = {css.menu__item}><a href = "https://oz.by/">{item.label}</a></li>
-                           
+                               <li className = {css.menu__item}><a href = "https://oz.by/">{item.label}</a></li>    
                        )
                    })
                    } 

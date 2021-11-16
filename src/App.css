@@ -55,9 +55,14 @@ ul{
 .first_section{
   display: flex;
   max-height: 370px;
+  margin-bottom: 20px;
 }
 
 .image__section {
   width: 1160px;
   overflow: hidden;
+}
+
+.second_section {
+  display: flex;
 }
