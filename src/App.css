@@ -54,10 +54,13 @@ ul{
 
 .first_section{
   display: flex;
+  justify-content: space-between;
   max-height: 370px;
+  margin-bottom: 20px;
 }
 
 .image__section {
   width: 1160px;
   overflow: hidden;
 }
+

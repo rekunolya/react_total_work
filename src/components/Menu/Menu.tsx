@@ -12,20 +12,19 @@ export class MenuSide extends React.Component<MenuProps> {
 
     render() {
         return (
-            <div>
-                <Menu mode = "vertical" className = {css.menu}>
-                   <ul>
+            <div className = {css.menu}>
+                <Menu mode = "vertical">
                    {this.props.categories.map((item)=>{
                        return (
-                           
-                               <li className = {css.menu__item}><a href = "https://oz.by/">{item.label}</a></li>
-                           
+                               <Menu.Item className = {css.menu__item}>
+                                   <a href = "https://oz.by/">
+                                       {item.label}
+                                   </a>
+                               </Menu.Item>    
                        )
                    })
                    } 
-                   </ul>
-                </Menu>    
-                
+                </Menu>        
             </div>
         )
     }

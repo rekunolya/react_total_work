@@ -1,6 +1,7 @@
 .menu{
     background-color: #f7f7f7;
     color: #333;
+    display: flex;
 }
 
 .menu__item{

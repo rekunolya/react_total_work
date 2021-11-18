@@ -1,0 +1,12 @@
+.title {
+    background-color: #eff5e4;
+    margin-bottom: 10px;
+    padding: 5px 0;
+    text-align: center;
+}
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 189px);
+}
