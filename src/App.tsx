@@ -1,6 +1,9 @@
 import React from 'react';
 import './App.css';
-import { GeneralCompponent } from './components/GeneralComponent';
+import { GeneralComponent } from './components/GeneralComponent';
+import {Route, Routes} from 'react-router-dom';
+//import {Switch, Route} from 'react-router-dom';
+import {NotFoundPage} from './components/NotFoundPage';
 
 class App extends React.Component {
 
@@ -8,7 +11,10 @@ class App extends React.Component {
 render() {
   return (
     <div className="App">
-    <GeneralCompponent/>
+    <Routes>
+      <Route path = "/general" element = {<GeneralComponent/>} /> 
+      <Route path = "/"  element = {<NotFoundPage />}/>
+    </Routes>
     </div>
   );
 }
