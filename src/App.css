@@ -54,6 +54,7 @@ ul{
 
 .first_section{
   display: flex;
+  justify-content: space-between;
   max-height: 370px;
   margin-bottom: 20px;
 }
@@ -63,6 +64,3 @@ ul{
   overflow: hidden;
 }
 
-.second_section {
-  display: flex;
-}

@@ -4,9 +4,6 @@
     display: flex;
 }
 
-.menu_list {
-    display: flex;
-}
 .menu__item{
     padding: 4px 10px 8px 20px;
  

@@ -1,0 +1,1 @@
+export {GeneralCompponent} from './GeneralComponent'
