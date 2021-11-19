@@ -10,7 +10,7 @@ interface GeneralComponentProps {
 
 }
 
-export class GeneralCompponent extends React.Component <GeneralComponentProps> {
+export class GeneralComponent extends React.Component <GeneralComponentProps> {
     render() {
         const categories = [
             {id: 1, type: "entertainment", label: "Развлечения, творчество"},

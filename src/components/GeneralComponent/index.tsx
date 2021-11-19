@@ -1,1 +1,1 @@
-export {GeneralCompponent} from './GeneralComponent'
+export {GeneralComponent} from './GeneralComponent'
