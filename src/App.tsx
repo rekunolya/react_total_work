@@ -12,7 +12,7 @@ render() {
   return (
     <div className="App">
     <Routes>
-      <Route path = "/general" element = {<GeneralComponent/>} /> 
+      <Route path = "/" element = {<GeneralComponent/>} /> 
       <Route path = "/"  element = {<NotFoundPage />}/>
     </Routes>
     </div>
