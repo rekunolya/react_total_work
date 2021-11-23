@@ -1,7 +1,7 @@
 import {Menu} from 'antd'
 import React from 'react'
 import css from './style.module.css'
-//import {PercentageOutlined, HeartOutlined} from '@ant-design/icons'
+import {Link} from 'react-router-dom'
 
 interface MenuProps {
 categories: {id: number; type: string; label: string}[]
@@ -17,9 +17,9 @@ export class MenuSide extends React.Component<MenuProps> {
                    {this.props.categories.map((item)=>{
                        return (
                                <Menu.Item className = {css.menu__item}>
-                                   <a href = "https://oz.by/">
+                                   <Link to = "/main">
                                        {item.label}
-                                   </a>
+                                   </Link>
                                </Menu.Item>    
                        )
                    })
