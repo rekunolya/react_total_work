@@ -5,6 +5,7 @@ import {Footer} from '../Footer';
 import logo from '../../img/unnamed.jpg';
 import { useSelector } from 'react-redux';
 import { Selectors } from "../store"
+import { CategoryPage } from "../CategoryPage/CategoryPage";
 
 
 
@@ -25,6 +26,7 @@ export function GeneralComponent () {
                 <BoardCard goodCategories = {goodCategories}/>
                 <Footer  text = "OOO «Праздник к нам приходит». Свидетельство о регистрации выдано каким-то странным органом от 32.08.2222 с регистрационным номером N968PC69."
 />
+                <CategoryPage /> 
 
             </div>
         )
