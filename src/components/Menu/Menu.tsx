@@ -17,7 +17,7 @@ export class MenuSide extends React.Component<MenuProps> {
                    {this.props.categories.map((item)=>{
                        return (
                                <Menu.Item className = {css.menu__item}>
-                                   <Link to = "/main">
+                                   <Link to = {`/${item.type}`}>
                                        {item.label}
                                    </Link>
                                </Menu.Item>    

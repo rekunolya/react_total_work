@@ -14,9 +14,9 @@ export class BoardCard extends React.Component<BoardCardProps> {
   
     render() {
         return (
-            <div>
+            <div >
                 {this.props.goodCategories.map((cat) => (
-          <section>
+          <section className = {css.boardcard}>
             <h3 className = {css.title}>{cat.category.label}</h3>
             <div className = {css.cards}>
             {cat.items.map((item) => (
