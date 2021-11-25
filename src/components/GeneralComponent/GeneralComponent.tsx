@@ -26,7 +26,7 @@ export function GeneralComponent () {
                 <BoardCard goodCategories = {goodCategories}/>
                 <Footer  text = "OOO «Праздник к нам приходит». Свидетельство о регистрации выдано каким-то странным органом от 32.08.2222 с регистрационным номером N968PC69."
 />
-                <CategoryPage /> 
+
 
             </div>
         )
