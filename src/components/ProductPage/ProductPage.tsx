@@ -1,6 +1,6 @@
 import React from 'react';
 import css from './style.module.css';
-import { Selectors } from "../store"
+import { Selectors } from "../../store"
 import { useSelector } from 'react-redux';
 import { useParams, useNavigate } from 'react-router'
 import { ButtonBack } from '../ButtonBack';

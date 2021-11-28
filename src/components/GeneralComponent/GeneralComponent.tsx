@@ -4,7 +4,7 @@ import {BoardCard} from '../BoardCard';
 import {Footer} from '../Footer';
 import logo from '../../img/unnamed.jpg';
 import { useSelector } from 'react-redux';
-import { Selectors } from "../store"
+import { Selectors } from "../../store"
 import { CategoryPage } from "../CategoryPage/CategoryPage";
 
 
