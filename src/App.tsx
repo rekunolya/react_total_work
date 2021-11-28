@@ -5,6 +5,7 @@ import {Route, Routes} from 'react-router-dom';
 //import {Switch, Route} from 'react-router-dom';
 import {NotFoundPage} from './components/NotFoundPage';
 import { CategoryPage } from '../src/components/CategoryPage';
+import { ProductPage } from '../src/components/ProductPage';
 
 class App extends React.Component {
 
@@ -15,6 +16,7 @@ render() {
     <Routes>
       <Route path = "/" element = {<GeneralComponent/>} /> 
       <Route path = "/"  element = {<NotFoundPage />}/>
+      <Route path="/:type/:id" element={<ProductPage/>} />
       <Route path = "/:type" element = {<CategoryPage/>}/> 
     </Routes>
     </div>

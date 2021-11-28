@@ -105,7 +105,7 @@ goodCategories: [
       ]
     },
     {
-      category: { id: 1, type: "family", label: "Детям и мамам" },
+      category: { id: 2, type: "family", label: "Детям и мамам" },
       items: [
         {
           id: 1,
@@ -194,7 +194,7 @@ goodCategories: [
       ]
     },
     {
-      category: { id: 1, type: "entertainment", label: "Развлечения, творчество" },
+      category: { id: 3, type: "entertainment", label: "Развлечения, творчество" },
       items: [
         {
           id: 1,
@@ -283,7 +283,7 @@ goodCategories: [
       ]
     },
     {
-      category: { id: 1, type: "souvenirs", label: "Сувениры, галантерея, одежда" },
+      category: { id: 4, type: "souvenirs", label: "Сувениры, галантерея, одежда" },
       items: [
         {
           id: 1,
@@ -372,7 +372,7 @@ goodCategories: [
       ]
     },
     {
-      category: { id: 1, type: "books", label: "Книги" },
+      category: { id: 5, type: "books", label: "Книги" },
       items: [
         {
           id: 1,
@@ -461,7 +461,7 @@ goodCategories: [
       ]
     },
     {
-      category: { id: 1, type: "cosmetics", label: "Косметика, парфюмерия" },
+      category: { id: 6, type: "cosmetics", label: "Косметика, парфюмерия" },
       items: [
         {
           id: 1,
@@ -550,7 +550,7 @@ goodCategories: [
       ]
     },
     {
-      category: { id: 1, type: "goods", label: "Продукты, деликатесы" },
+      category: { id: 7, type: "goods", label: "Продукты, деликатесы" },
       items: [
         {
           id: 1,
@@ -639,7 +639,7 @@ goodCategories: [
       ]
     },
     {
-      category: { id: 1, type: "house", label: "Дом, сад, зоотовары" },
+      category: { id: 8, type: "house", label: "Дом, сад, зоотовары" },
       items: [
         {
           id: 1,
@@ -728,7 +728,7 @@ goodCategories: [
       ]
     },
     {
-      category: { id: 1, type: "technics", label: "Техника, электроника" },
+      category: { id: 9, type: "technics", label: "Техника, электроника" },
       items: [
         {
           id: 1,
@@ -817,7 +817,7 @@ goodCategories: [
       ]
     },
     {
-      category: { id: 1, type: "tourism", label: "Туризм, отдых, спорт" },
+      category: { id: 10, type: "tourism", label: "Туризм, отдых, спорт" },
       items: [
         {
           id: 1,
@@ -906,7 +906,7 @@ goodCategories: [
       ]
     },
     {
-      category: { id: 1, type: "health", label: "Здоровье, медтехника" },
+      category: { id: 11, type: "health", label: "Здоровье, медтехника" },
       items: [
         {
           id: 1,

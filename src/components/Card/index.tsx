@@ -1,1 +1,1 @@
-export {CardSite} from './Card'
+export {Card} from './Card'

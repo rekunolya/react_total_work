@@ -1,0 +1,37 @@
+.card {
+    display: grid;
+    grid-template-areas: 
+    "image title"
+    "image price"
+    "image description";
+    grid-template-columns: 2fr 4fr;
+    grid-template-rows: 1fr 1fr 2fr;
+    width: 100%;
+    max-height: 300px;
+    overflow: hidden;
+    padding-top: 30px;
+}
+.img {
+    max-width: 400px;
+    max-height: 300px;
+    overflow: hidden;
+   
+}
+
+.label {
+    font-size: 36px;
+    font-weight: bold;
+    grid-area: title;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 30px;
+    grid-area: price;
+}
+
+.discription{
+    font-weight: 16px;
+    grid-area: description;
+    
+}

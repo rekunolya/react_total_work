@@ -1,6 +1,7 @@
 import React from 'react'
 import css from './style.module.css'
-import {Card} from 'antd'
+import {Card as CardAntd} from 'antd'
+import {Link} from 'react-router-dom';
 
 interface CardProps {
 id: number; 
@@ -10,16 +11,16 @@ price: number;
 img: string;
 }
 
-export class CardSite extends React.Component<CardProps> {
-    render() {
-        const {Meta} = Card;
+export const Card: React.FC<CardProps> = ({label, price, img, id, category_type}) => {
+      
         return (
-            <Card 
+            <Link to = {`/${category_type}/${id}`}>
+            <CardAntd 
             style = {{width: 233}} 
-            cover = {<img src = {this.props.img} alt = "" className = {css.image}/>}
+            cover = {<img src = {img} alt = "" className = {css.image}/>}
             className = {css.card}>
-                <Meta title ={this.props.label} description = {this.props.price}/>
-            </Card>
+                <CardAntd.Meta title ={label} description = {price} className = {css.title} />
+            </CardAntd>
+            </Link>
         )
     }
-}
