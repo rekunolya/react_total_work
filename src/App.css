@@ -55,7 +55,7 @@ ul{
 .first_section{
   display: flex;
   justify-content: space-between;
-  max-height: 370px;
+  max-height: 450px;
   margin-bottom: 20px;
 }
 

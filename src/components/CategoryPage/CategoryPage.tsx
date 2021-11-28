@@ -1,7 +1,7 @@
 import React from 'react'
 import css from './style.module.css'
 import { useParams, useNavigate } from 'react-router'
-import { Selectors } from "../store"
+import { Selectors } from "../../store"
 import { useSelector } from 'react-redux';
 import { Card } from '../Card';
 import { ButtonBack } from '../ButtonBack';
