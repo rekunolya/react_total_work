@@ -25,13 +25,12 @@ export function ProductPage (){
 
     } 
     return (
-        <div>
-        <div> {product.img}  </div>
-        <div>
-            <div> {product.label} </div>
-            <div> {product.price} </div>
-            <div> Description </div>
-        </div>
+        <div className = {css.card}>
+        <img src = {product.img} alt = ""  className = {css.img}/> 
+        <div  className = {css.label}> {product.label} </div>
+        <div className = {css.price}> {product.price} руб. </div>
+        <div className = {css.discription}> Description </div>
+      
 
     </div>
 

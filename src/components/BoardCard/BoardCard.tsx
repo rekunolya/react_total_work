@@ -1,4 +1,4 @@
-import {CardSite} from '../Card'
+import {Card} from '../Card'
 import React from 'react'
 import css from './style.module.css'
 
@@ -20,7 +20,7 @@ export class BoardCard extends React.Component<BoardCardProps> {
             <h3 className = {css.title}>{cat.category.label}</h3>
             <div className = {css.cards}>
             {cat.items.map((item) => (
-              <CardSite id={item.id} img={item.img} category_type = {item.category_type} label = {item.label} price = {item.price}/>
+              <Card id={item.id} img={item.img} category_type = {item.category_type} label = {item.label} price = {item.price } />
             ))}
             </div>
           
