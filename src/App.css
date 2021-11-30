@@ -37,6 +37,8 @@
   }
 }
 
+
+
 li {
   list-style-type: none;
   text-align: left;
@@ -53,9 +55,11 @@ ul{
 }
 
 .first_section{
+  width: 1200px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  max-height: 450px;
+  max-height: 550px;
   margin-bottom: 20px;
 }
 

@@ -1,6 +1,9 @@
 import React from "react";
 import css from "./style.module.css";
-import { Button, Input } from "antd"; 
+import { Badge, Button, Input } from "antd"; 
+import 'antd/dist/antd.css';
+import '../../App.css';
+import '../../index.css'
 
 interface HeaderProps {
 
@@ -14,7 +17,9 @@ export class Header extends React.Component {
         return (
             <div className = {css.header}>
                 <div>
+                    <a href = "http://oz.by">
                     <img src = "https://oz.by/img/module-header/logo.v1637746199.png" alt = ""/>
+                    </a>
                 </div>
                 <div className = {css.info}>
                     <ul className = {css.list}>
@@ -22,20 +27,26 @@ export class Header extends React.Component {
                         <li> <a href = "/">Закажите звонок</a> или <a href = "/"> Напишите нам </a></li>
                     </ul>
                     
-                    <Input.Search placeholder="Введите название товара" allowClear />
+                    <Input.Search placeholder="Введите название товара" allowClear className = {css.input}/>
                   
 
                 </div>
                 <div>
                     <ul className = {css.list}>
-                        <a ><li> Помощь </li></a>
-                        <a><li> Доставка </li></a>
-                        <a><li> Оплата </li></a>
+                        <a href = " "><li> Помощь </li></a>
+                        <a href = " "><li> Доставка </li></a>
+                        <a href = " "><li> Оплата </li></a>
                     </ul>
                     <div className = {css.login}>
                      
                         <Button className = {css.entrance}> Войти </Button>
-                        <Button className = {css.entrance}> Корзина </Button>
+                        <Badge count = {0} showZero className = {css.cart}>
+                            <Button> 
+                          Корзина 
+                       
+                         </Button>
+                         </Badge>
+                        
                     </div>
 
                 </div>

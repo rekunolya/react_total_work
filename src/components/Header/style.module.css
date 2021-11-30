@@ -1,4 +1,6 @@
 .header {
+    width: 1200px;
+    margin: 0 auto;
     padding: 5px 10px 10px 10px;
     display: flex;
     justify-content: space-between;
@@ -11,6 +13,7 @@
 
 .list {
     display: flex;
+    justify-content: space-between;
     padding-top: 10px;
     margin-bottom: 7px;
 }
@@ -22,13 +25,25 @@ li {
 }
 
 .input {
+    height: 46px;
     width: 500px;
 }
 
 .login {
     display: flex;
-    justify-content: space-evenly;
+    
+  
 }
 .entrance {
-    width: 50%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    flex-grow: 1;
+}
+
+.cart {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    flex-grow: 4;
 }
