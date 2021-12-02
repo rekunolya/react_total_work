@@ -1,4 +1,4 @@
-import { createStore } from "redux";
+import { combineReducers, createStore } from "redux";
 
 const INITIAL_STATE = {
    categories: [
@@ -997,10 +997,20 @@ goodCategories: [
   ]
 }
 
-const reducer = (state = INITIAL_STATE) => {
+const COUNTER_CART = {
+  value: 25
+}
+
+const reducerCategory = (state = INITIAL_STATE) => {
     return state
 }
 
-export const store = createStore(reducer);
+const reducerCart = (state = COUNTER_CART) => {
+  return state
+}
+
+const rootReducer = combineReducers({reducerCategory, reducerCart})
+
+export const store = createStore(rootReducer);
 
 export type RootState = ReturnType<typeof store.getState>

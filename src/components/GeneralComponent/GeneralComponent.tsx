@@ -5,7 +5,6 @@ import {Footer} from '../Footer';
 import logo from '../../img/unnamed.jpg';
 import { useSelector } from 'react-redux';
 import { Selectors } from "../../store"
-import { CategoryPage } from "../CategoryPage/CategoryPage";
 import { Header } from "../Header";
 
 

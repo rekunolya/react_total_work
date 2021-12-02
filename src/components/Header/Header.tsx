@@ -3,16 +3,17 @@ import css from "./style.module.css";
 import { Badge, Button, Input } from "antd"; 
 import 'antd/dist/antd.css';
 import '../../App.css';
-import '../../index.css'
-
-interface HeaderProps {
-
-}
+import '../../index.css';
+import { useSelector } from 'react-redux';
+import { Selectors } from "../../store";
 
 
-export class Header extends React.Component {
 
-        render() {
+export function Header () {
+
+  //  const count = useSelector(Selectors.getCart);
+
+        
             //const onSearch = value => console.log(value);
         return (
             <div className = {css.header}>
@@ -53,4 +54,3 @@ export class Header extends React.Component {
             </div>
         )
     }
-}

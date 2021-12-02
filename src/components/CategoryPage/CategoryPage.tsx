@@ -14,7 +14,7 @@ import { Footer } from '../Footer';
 export function CategoryPage () {
     const categories = useSelector(Selectors.getGoodCategories);
     const { type } = useParams();
-    const category =  categories.find(el => el.category.type === type);
+    const category =  categories.find((el: any) => el.category.type === type);
     const navigate = useNavigate();
 
     if (!category) {
@@ -33,7 +33,7 @@ export function CategoryPage () {
             <Header/>
             <div className = {css.title}> <h1> {category?.category.label} </h1></div>
             <div className = {css.items}>
-            {category?.items.map((item) => (
+            {category?.items.map((item:any) => (
                 <Card id={item.id} img={item.img} category_type = {item.category_type} label = {item.label} price = {item.price}/>
             ))}
             </div>   
