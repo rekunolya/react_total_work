@@ -34,7 +34,7 @@ export function CategoryPage () {
             <div className = {css.title}> <h1> {category?.category.label} </h1></div>
             <div className = {css.items}>
             {category?.items.map((item) => (
-                <Card id={item.id} img={item.img} category_type = {item.category_type} label = {item.label} price = {item.price}/>
+                <Card key={item.id} img={item.img} category_type = {item.category_type} label = {item.label} price = {item.price}/>
             ))}
             </div>   
             <Footer  text = "OOO «Праздник к нам приходит». Свидетельство о регистрации выдано каким-то странным органом от 32.08.2222 с регистрационным номером N968PC69."
