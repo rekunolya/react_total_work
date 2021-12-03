@@ -14,7 +14,7 @@ import { Footer } from '../Footer';
 export function CategoryPage () {
     const categories = useSelector(Selectors.getGoodCategories);
     const { type } = useParams();
-    const category =  categories.find(el => el.category.type === type);
+    const category =  categories.find((el: any) => el.category.type === type);
     const navigate = useNavigate();
 
     if (!category) {
@@ -33,8 +33,11 @@ export function CategoryPage () {
             <Header/>
             <div className = {css.title}> <h1> {category?.category.label} </h1></div>
             <div className = {css.items}>
-            {category?.items.map((item) => (
-                <Card key={item.id} img={item.img} category_type = {item.category_type} label = {item.label} price = {item.price}/>
+
+            {category?.items.map((item:any) => (
+                <Card id={item.id} img={item.img} category_type = {item.category_type} label = {item.label} price = {item.price}/>
+
+           
             ))}
             </div>   
             <Footer  text = "OOO «Праздник к нам приходит». Свидетельство о регистрации выдано каким-то странным органом от 32.08.2222 с регистрационным номером N968PC69."
