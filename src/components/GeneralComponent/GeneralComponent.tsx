@@ -1,5 +1,5 @@
 import React from "react";
-import {MenuSide} from '../Menu';
+import {Menu} from '../Menu';
 import {BoardCard} from '../BoardCard';
 import {Footer} from '../Footer';
 import logo from '../../img/unnamed.jpg';
@@ -9,17 +9,16 @@ import { Header } from "../Header";
 
 
 
-export function GeneralComponent () {
+export const GeneralComponent: React.FC = () => {
   
        const categories = useSelector(Selectors.getCategories);
-
        const goodCategories = useSelector(Selectors.getGoodCategories) ;
           
           return (
             <div>
                 <Header/>
                 <section className = "first_section">
-                    <MenuSide categories = {categories}/>
+                    <Menu categories = {categories}/>
                     <div className = "image__section">
                         <img src = {logo} alt = "painting"  width = "1160px"/>
                     </div>
@@ -30,5 +29,8 @@ export function GeneralComponent () {
 
 
             </div>
-        )
+          )
+
     }
+
+

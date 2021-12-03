@@ -1,31 +1,43 @@
-import {Menu} from 'antd'
-import React from 'react'
-import css from './style.module.css'
-import {Link} from 'react-router-dom'
+import {Menu as MenuAntd} from 'antd';
+import React from 'react';
+import css from './style.module.css';
+import {Link} from 'react-router-dom';
+import { connect } from 'react-redux';
+import {CategoriesAction, LOAD_STATUSES, CategoriesSelectors} from '../../store/categoreisSlice'
+
+
 
 interface MenuProps {
 categories: {id: number; type: string; label: string}[]
 }
 
-export class MenuSide extends React.Component<MenuProps> {
+export const MenuBase: React.FC <MenuProps> = ({categories}) => {
 
-
-    render() {
         return (
             <div className = {css.menu}>
-                <Menu mode = "vertical">
-                   {this.props.categories.map((item)=>{
+                <MenuAntd mode = "vertical">
+                   {categories.map((item)=>{
                        return (
-                               <Menu.Item className = {css.menu__item}>
+                               <MenuAntd.Item className = {css.menu__item}>
                                    <Link to = {`/${item.type}`}>
                                        {item.label}
                                    </Link>
-                               </Menu.Item>    
+                               </MenuAntd.Item>    
                        )
                    })
                    } 
-                </Menu>        
+                </MenuAntd>        
             </div>
         )
-    }
-}
+    };
+
+    const mapStateToProps = (state: any) => {
+        return {
+            menu: CategoriesSelectors.getCategories(state),
+            isLoading: CategoriesSelectors.getCategoriesLoadStatus(state) === LOAD_STATUSES.LOADING,
+            isError: CategoriesSelectors.getCategoriesLoadStatus(state) === LOAD_STATUSES.ERROR
+        };
+    };
+
+export const Menu = connect(mapStateToProps)(MenuBase)
+
