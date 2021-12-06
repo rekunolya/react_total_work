@@ -3,7 +3,7 @@ import { LOAD_STATUSES } from './constants'
 export interface Categories {
     id: number;
     label: string;
-    title: string;
+    type: string;
 }
 
 export interface State {

@@ -1,9 +1,10 @@
 import {Menu as MenuAntd} from 'antd';
-import React from 'react';
+import React, { useEffect } from 'react';
 import css from './style.module.css';
 import {Link} from 'react-router-dom';
-import { connect } from 'react-redux';
-import {CategoriesAction, LOAD_STATUSES, CategoriesSelectors} from '../../store/categoreisSlice'
+import { useDispatch } from 'react-redux';
+import { fetchCategories } from '../../store/categoreisSlice'
+//import { CategoriesAction } from '../../store/categoreisSlice'
 
 
 
@@ -11,7 +12,13 @@ interface MenuProps {
 categories: {id: number; type: string; label: string}[]
 }
 
-export const MenuBase: React.FC <MenuProps> = ({categories}) => {
+export const Menu: React.FC <MenuProps> = ({categories}) => {
+
+    const dispatch = useDispatch()
+
+    useEffect (() => {
+        dispatch(fetchCategories);
+    }, [dispatch])
 
         return (
             <div className = {css.menu}>
@@ -31,13 +38,5 @@ export const MenuBase: React.FC <MenuProps> = ({categories}) => {
         )
     };
 
-    const mapStateToProps = (state: any) => {
-        return {
-            menu: CategoriesSelectors.getCategories(state),
-            isLoading: CategoriesSelectors.getCategoriesLoadStatus(state) === LOAD_STATUSES.LOADING,
-            isError: CategoriesSelectors.getCategoriesLoadStatus(state) === LOAD_STATUSES.ERROR
-        };
-    };
 
-export const Menu = connect(mapStateToProps)(MenuBase)
 

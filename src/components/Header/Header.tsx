@@ -11,7 +11,7 @@ import { Selectors } from "../../store";
 
 export function Header () {
 
-  const count = useSelector(Selectors.getCart);
+  const count: number = useSelector(Selectors.getCart);
 
         
             //const onSearch = value => console.log(value);
@@ -41,7 +41,7 @@ export function Header () {
                     <div className = {css.login}>
                      
                         <Button className = {css.entrance}> Войти </Button>
-                        <Badge count = {count.value} showZero className = {css.cart}>
+                        <Badge count = {0} showZero className = {css.cart}>
                             <Button> 
                           Корзина 
                        

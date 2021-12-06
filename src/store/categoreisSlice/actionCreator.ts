@@ -19,7 +19,7 @@ export const fetchCategories = () => async (dispatch: any) => {
         if (resp.ok) {
             return resp.json();
         }
-        
+
         throw new Error ('somithing is wrong');
 
     })

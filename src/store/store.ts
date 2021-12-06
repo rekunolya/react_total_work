@@ -993,14 +993,15 @@ const COUNTER_CART = {
   value: 0
 }
 
+const reducerSome = (state = INITIAL_STATE) => {
+    return state
+}
 
 const reducerCart = (state = COUNTER_CART) => {
   return state
 }
 
-const rootReducer = combineReducers({
-  category: reducerCategory, 
-  cart: reducerCart})
+const rootReducer = combineReducers({reducerSome , reducerCategory, reducerCart})
 
 export const store = createStore(rootReducer, applyMiddleware(thunk));
 

@@ -7,7 +7,7 @@ interface Good {
     price: number; 
     img: string;
 }
- interface Cateory {
+ interface Category {
      id: number;
      label: string;
      type: string;
@@ -27,7 +27,7 @@ export class Api {
         });
     }
 
-    getCategories(): Promise<{items: Cateory[]; total: number}> {
+    getCategories(): Promise<{category: Category[]}> {
         return fetch('/api/category').then(r => {
             if (r.ok) {
                 return r.json()
