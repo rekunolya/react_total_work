@@ -4,7 +4,8 @@ import {BoardCard} from '../BoardCard';
 import {Footer} from '../Footer';
 import logo from '../../img/unnamed.jpg';
 import { useSelector } from 'react-redux';
-import { Selectors } from "../../store";
+//import { Selectors } from "../../store";
+import {PopularCategoriesSelectors} from '../../store/popularCategoriesSlice'
 import { Header } from "../Header";
 //import { CategoriesSelectors } from "../../store/categoreisSlice"
 
@@ -12,7 +13,7 @@ import { Header } from "../Header";
 export const GeneralComponent: React.FC = () => {
   
        //const categories = useSelector(CategoriesSelectors.getCategories);
-       const goodCategories = useSelector(Selectors.getGoodCategories) ;
+       const goodCategories = useSelector(PopularCategoriesSelectors.getPopularCategories) ;
           
           return (
             <div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import css from './style.module.css';
-import { Selectors } from "../../store"
+import { PopularCategoriesSelectors  } from "../../store/popularCategoriesSlice"
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useNavigate } from 'react-router'
 import { ButtonBack } from '../ButtonBack';
@@ -11,7 +11,7 @@ import { Button } from 'antd';
 
 export const ProductPage: React.FC =  () => {
 
-    const products =  useSelector(Selectors.getGoodCategories);
+    const products =  useSelector(PopularCategoriesSelectors.getPopularCategories);
     const navigate = useNavigate();
     const { id, type } = useParams();
     const cat =  products.find((el:any) => el.category.type === type);

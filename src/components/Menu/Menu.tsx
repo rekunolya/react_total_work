@@ -7,14 +7,6 @@ import { fetchCategories } from '../../store/categoreisSlice';
 import { CategoriesSelectors } from "../../store/categoreisSlice";
 import { useSelector } from 'react-redux';
 
-//import { CategoriesAction } from '../../store/categoreisSlice'
-
-
-
-//interface MenuProps {
-//categories: {id: number; type: string; label: string}[]
-//}
-
 export const Menu: React.FC  = () => {
 
     const categories = useSelector(CategoriesSelectors.getCategories)

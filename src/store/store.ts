@@ -1,6 +1,7 @@
 import { combineReducers, createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
-import { reducer as reducerCategory} from "./categoreisSlice"
+import { reducer as reducerCategory} from "./categoreisSlice";
+import { reducer as reducerPopularCategories} from "./popularCategoriesSlice";
 
 const INITIAL_STATE = {
    categories: [
@@ -1001,7 +1002,7 @@ const reducerCart = (state = COUNTER_CART) => {
   return state
 }
 
-const rootReducer = combineReducers({reducerSome , reducerCategory, reducerCart})
+const rootReducer = combineReducers({reducerCategory, reducerPopularCategories, reducerCart})
 
 export const store = createStore(rootReducer, applyMiddleware(thunk));
 

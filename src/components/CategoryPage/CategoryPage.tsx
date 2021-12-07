@@ -1,7 +1,7 @@
 import React from 'react'
 import css from './style.module.css'
-import { useParams, useNavigate } from 'react-router'
-import { Selectors } from "../../store"
+import { useParams, useNavigate } from 'react-router';
+import {PopularCategoriesSelectors} from '../../store/popularCategoriesSlice';
 import { useSelector } from 'react-redux';
 import { Card } from '../Card';
 import { ButtonBack } from '../ButtonBack';
@@ -12,7 +12,7 @@ import { Footer } from '../Footer';
 
 
 export function CategoryPage () {
-    const categories = useSelector(Selectors.getGoodCategories);
+    const categories = useSelector(PopularCategoriesSelectors.getPopularCategories);
     const { type } = useParams();
     const category =  categories.find((el: any) => el.category.type === type);
     const navigate = useNavigate();
