@@ -6,19 +6,19 @@ import logo from '../../img/unnamed.jpg';
 import { useSelector } from 'react-redux';
 import { Selectors } from "../../store";
 import { Header } from "../Header";
-import { CategoriesSelectors } from "../../store/categoreisSlice"
+//import { CategoriesSelectors } from "../../store/categoreisSlice"
 
 
 export const GeneralComponent: React.FC = () => {
   
-       const categories = useSelector(CategoriesSelectors.getCategories);
+       //const categories = useSelector(CategoriesSelectors.getCategories);
        const goodCategories = useSelector(Selectors.getGoodCategories) ;
           
           return (
             <div>
                 <Header/>
                 <section className = "first_section">
-                    <Menu categories = {categories}/>
+                    <Menu/>
                     <div className = "image__section">
                         <img src = {logo} alt = "painting"  width = "1160px"/>
                     </div>

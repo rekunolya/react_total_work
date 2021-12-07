@@ -27,8 +27,8 @@ export class Api {
         });
     }
 
-    getCategories(): Promise<{category: Category[]}> {
-        return fetch('/api/category').then(r => {
+    static getCategories(): Promise<{categories: Category[]}> {
+        return fetch('/api/categories').then(r => {
             if (r.ok) {
                 return r.json()
             }
