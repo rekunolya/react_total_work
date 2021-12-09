@@ -1,5 +1,5 @@
 import {POPULAR_CATEGORIES_ACTIONS} from "./constats";
-import {PopularCategories} from "./type";
+import  {PopularCategories} from "../../api";
 import { Api } from "../../api";
 
 export const getPopularCategories = () => ({type: POPULAR_CATEGORIES_ACTIONS.GET_POPULAR_CATEGORIES});
@@ -16,8 +16,10 @@ export const getPopularCategoriesFailure = () => ({
 export const fetchPopularCategories = () => async (dispatch: any) => {
     dispatch(getPopularCategories());
     Api.getPopularCategories()
-    .then(({popularCategories}) => {
-        dispatch(getPopularCategoriesSuccess(popularCategories));
+    .then((result) => {
+        console.log("result", result)
+        console.log("popularCat", result)
+        dispatch(getPopularCategoriesSuccess(result));
     })
     .catch(() => {
         dispatch(getPopularCategoriesFailure());

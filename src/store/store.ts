@@ -1002,7 +1002,7 @@ const reducerCart = (state = COUNTER_CART) => {
   return state
 }
 
-const rootReducer = combineReducers({reducerCategory, reducerPopularCategories, reducerCart})
+const rootReducer = combineReducers({reducerCategory, reducerPopularCategories, reducerCart, reducerSome})
 
 export const store = createStore(rootReducer, applyMiddleware(thunk));
 

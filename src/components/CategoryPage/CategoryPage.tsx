@@ -3,6 +3,7 @@ import css from './style.module.css'
 import { useParams, useNavigate } from 'react-router';
 import {PopularCategoriesSelectors} from '../../store/popularCategoriesSlice';
 import { useSelector, useDispatch } from 'react-redux';
+import { Selectors } from "../../store"
 import { Card } from '../Card';
 import { ButtonBack } from '../ButtonBack';
 import { Header } from '../Header';
@@ -13,21 +14,25 @@ import { fetchPopularCategories } from '../../store/popularCategoriesSlice';
 
 
 export function CategoryPage () {
+    //const categories = useSelector(Selectors.getGoodCategories)
     const categories = useSelector(PopularCategoriesSelectors.getPopularCategories);
+    console.log ("категория", categories);
     const { type } = useParams();
-    const category =  categories.find((el: any) => el.category.type === type);
+    console.log ("type", type);
+    const category =  categories.find((el) => el.category.type === type);
+    console.log("category", category);
     const navigate = useNavigate();
     const dispatch = useDispatch()
-
+     
     useEffect (() => {
-        dispatch(fetchPopularCategories());
+       dispatch(fetchPopularCategories());
     }, [dispatch])
+ 
 
      if (!category) {
         return (
             <div>
-                <h2 className = {css.text}> Category is not found, <ButtonBack onClick = {() => navigate(-1)} className = {css.button} title = "come back"/>  </h2>
-                
+                <h2 className = {css.text}> Category is not found, <ButtonBack onClick = {() => navigate(-1)} className = {css.button} title = "come back"/>  </h2>   
             </div>
         )
     }
@@ -52,5 +57,6 @@ export function CategoryPage () {
         </div>
            
         )
- 
+
+   
 }

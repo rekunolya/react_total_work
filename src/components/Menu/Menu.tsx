@@ -22,7 +22,7 @@ export const Menu: React.FC  = () => {
                    {categories.map((item)=>{
                        return (
                                <MenuAntd.Item className = {css.menu__item}>
-                                   <Link to = {`/${item.type}`}>
+                                   <Link to = {`/${item.type}`} key = {item.id}>
                                        {item.label}
                                    </Link>
                                </MenuAntd.Item>    

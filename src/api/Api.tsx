@@ -14,9 +14,9 @@ interface Good {
 
  }
 
- interface PopularCategories {
-     category: {id: number, type: string, label: string},
-     items: {id: number, category_type: string, label: string, price: number, img: string}[], 
+export type PopularCategories = {
+     category: Category,
+     items: Good[], 
  }
 
  interface Cart {
@@ -40,7 +40,7 @@ export class Api {
         })
     }
 
-   static getPopularCategories(): Promise<{popularCategories: PopularCategories[]}> {
+   static getPopularCategories(): Promise<PopularCategories[]> {
         return fetch('api/popular_categories').then(r => {
             if(r.ok) {
                 return r.json()

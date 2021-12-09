@@ -1,1 +1,2 @@
-export {Api} from './Api'
+export {Api} from './Api';
+export type {PopularCategories} from './Api'
