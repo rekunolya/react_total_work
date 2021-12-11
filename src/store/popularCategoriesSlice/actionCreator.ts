@@ -17,9 +17,7 @@ export const fetchPopularCategories = () => async (dispatch: any) => {
     dispatch(getPopularCategories());
     Api.getPopularCategories()
     .then((result) => {
-        console.log("result", result)
-        console.log("popularCat", result)
-        dispatch(getPopularCategoriesSuccess(result));
+       dispatch(getPopularCategoriesSuccess(result));
     })
     .catch(() => {
         dispatch(getPopularCategoriesFailure());

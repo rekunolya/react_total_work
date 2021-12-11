@@ -1,22 +1,25 @@
 import React, { useEffect } from 'react'
 import css from './style.module.css'
 import { useParams, useNavigate } from 'react-router';
-import {PopularCategoriesSelectors} from '../../store/popularCategoriesSlice';
+//import {PopularCategoriesSelectors} from '../../store/popularCategoriesSlice';
+import { SelectedCategorySelectors } from '../../store/selectedCategorySlice';
 import { useSelector, useDispatch } from 'react-redux';
-import { Selectors } from "../../store"
+//import { Selectors } from "../../store"
 import { Card } from '../Card';
 import { ButtonBack } from '../ButtonBack';
 import { Header } from '../Header';
 import { Footer } from '../Footer';
-import { fetchPopularCategories } from '../../store/popularCategoriesSlice';
+//import { fetchPopularCategories } from '../../store/popularCategoriesSlice';
+import { fetchSelectedCategory } from '../../store/selectedCategorySlice';
 
 
 
 
 export function CategoryPage () {
     //const categories = useSelector(Selectors.getGoodCategories)
-    const categories = useSelector(PopularCategoriesSelectors.getPopularCategories);
-    console.log ("категория", categories);
+    const categories = useSelector(SelectedCategorySelectors.getSelectedCategory)
+   // const categories = useSelector(PopularCategoriesSelectors.getPopularCategories);
+    console.log ("категория", categories)
     const { type } = useParams();
     console.log ("type", type);
     const category =  categories.find((el) => el.category.type === type);
@@ -25,7 +28,7 @@ export function CategoryPage () {
     const dispatch = useDispatch()
      
     useEffect (() => {
-       dispatch(fetchPopularCategories());
+       dispatch(fetchSelectedCategory());
     }, [dispatch])
  
 

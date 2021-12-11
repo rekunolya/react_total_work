@@ -1,5 +1,3 @@
-
-
 interface Good {
     id: number;
     label: string;
@@ -7,17 +5,21 @@ interface Good {
     price: number; 
     img: string;
 }
- interface Category {
+ export type Category = {
      id: number;
      label: string;
      type: string;
-
  }
 
 export type PopularCategories = {
      category: Category,
      items: Good[], 
  }
+
+export type SelectedCategory = {
+    category: Category,
+    items: Good[],
+}
 
  interface Cart {
      value: number;
@@ -42,6 +44,14 @@ export class Api {
 
    static getPopularCategories(): Promise<PopularCategories[]> {
         return fetch('api/popular_categories').then(r => {
+            if(r.ok) {
+                return r.json()
+            }
+        })
+    }
+
+    static getSelectedCategory(id: number): Promise<SelectedCategory[]> {
+        return fetch(`/api/categories?ids= ${id}`).then(r => {
             if(r.ok) {
                 return r.json()
             }
