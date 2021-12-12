@@ -1,24 +1,24 @@
-interface Good {
-    id: number;
+interface Product {
+    id: string;
     label: string;
     category_type: string;   
     price: number; 
     img: string;
 }
  export type Category = {
-     id: number;
+     id: string;
      label: string;
      type: string;
  }
 
 export type PopularCategories = {
      category: Category,
-     items: Good[], 
+     items: Product[], 
  }
 
 export type SelectedCategory = {
     category: Category,
-    items: Good[],
+    items: Product[],
 }
 
  interface Cart {
@@ -26,7 +26,7 @@ export type SelectedCategory = {
  }
 
 export class Api {
-    getGoods(): Promise<{ items: Good[]; total: number }> {
+    getGoods(): Promise<{ items: Product[]; total: number }> {
         return fetch('/api/goods').then(r => {
             if (r.ok) {
                 return r.json()
@@ -50,8 +50,16 @@ export class Api {
         })
     }
 
-    static getSelectedCategory(id: number): Promise<SelectedCategory[]> {
-        return fetch(`/api/categories?ids= ${id}`).then(r => {
+    static getSelectedCategory(id: string): Promise<SelectedCategory> {
+        return fetch(`/api/categories?ids=${id}`).then(r => {
+            if(r.ok) {
+                return r.json()
+            }
+        })
+    }
+
+    static getProduct(id: string): Promise<{product: Product[]}> {
+        return fetch(`/api/goods?ids=${id}`).then(r => {
             if(r.ok) {
                 return r.json()
             }

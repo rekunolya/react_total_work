@@ -1,20 +1,12 @@
 import React from "react";
 import {Menu} from '../Menu';
-import {BoardCard} from '../BoardCard';
 import {Footer} from '../Footer';
 import logo from '../../img/unnamed.jpg';
-import { useSelector } from 'react-redux';
-//import { Selectors } from "../../store";
-import {PopularCategoriesSelectors} from '../../store/popularCategoriesSlice'
 import { Header } from "../Header";
-//import { CategoriesSelectors } from "../../store/categoreisSlice"
-
+import { PopularCategories } from "../PopularCategories";
 
 export const GeneralComponent: React.FC = () => {
-  
-       //const categories = useSelector(CategoriesSelectors.getCategories);
-       const goodCategories = useSelector(PopularCategoriesSelectors.getPopularCategories) ;
-          
+
           return (
             <div>
                 <Header/>
@@ -24,14 +16,12 @@ export const GeneralComponent: React.FC = () => {
                         <img src = {logo} alt = "painting"  width = "1160px"/>
                     </div>
                 </section>
-                <BoardCard goodCategories = {goodCategories}/>
+                <PopularCategories/>
                 <Footer  text = "OOO «Праздник к нам приходит». Свидетельство о регистрации выдано каким-то странным органом от 32.08.2222 с регистрационным номером N968PC69."
 />
-
-
             </div>
           )
 
-    }
+}
 
 

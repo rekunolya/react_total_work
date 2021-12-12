@@ -4,7 +4,7 @@ import {Card as CardAntd} from 'antd'
 import {Link} from 'react-router-dom';
 
 interface CardProps {
-key: number; 
+key: string; 
 category_type: string;   
 label: string;
 price: number; 
