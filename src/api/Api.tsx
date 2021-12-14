@@ -50,7 +50,7 @@ export class Api {
         })
     }
 
-    static getSelectedCategory(id: string): Promise<SelectedCategory> {
+    static getSelectedCategory(id: string): Promise<{categories:Category}> {
         return fetch(`/api/categories?ids=${id}`).then(r => {
             if(r.ok) {
                 return r.json()
