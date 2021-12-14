@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import css from './style.module.css'
 import { useParams, useNavigate } from 'react-router';
 import { SelectedCategorySelectors } from '../../store/selectedCategorySlice';
-//import {CategoriesSelectors} from '../../store/categoreisSlice'
+import {CategoriesSelectors} from '../../store/categoreisSlice'
 import { useSelector, useDispatch } from 'react-redux';
 //import { Card } from '../Card';
 import { ButtonBack } from '../ButtonBack';
@@ -11,8 +11,8 @@ import { Footer } from '../Footer';
 import { fetchSelectedCategory } from '../../store/selectedCategorySlice';
 
 export function CategoryPage () {
-    const category = useSelector(SelectedCategorySelectors.getSelectedCategory)
-    //const category = useSelector(CategoriesSelectors.getCategories)
+  const category = useSelector(SelectedCategorySelectors.getSelectedCategory)
+  //  const category = useSelector(CategoriesSelectors.getCategories)
     console.log ("категория", category)
     const { id } = useParams();
     console.log ("id", id);
@@ -38,7 +38,7 @@ export function CategoryPage () {
             <Header/>
             {category.map((cat) => (
                 <div>
-                <div className = {css.title}> <h1> {cat.category.label} </h1></div>
+                <div className = {css.title}> <h1> {cat.label} </h1></div>
            
                 </div>
             ))}

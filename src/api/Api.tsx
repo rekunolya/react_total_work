@@ -16,10 +16,10 @@ export type PopularCategories = {
      items: Product[], 
  }
 
-export type SelectedCategory = {
-    category: Category,
-    items: Product[],
-}
+//export type SelectedCategory = {
+  //  category: Category,
+    //items: Product[],
+//}
 
  interface Cart {
      value: number;

@@ -1,5 +1,5 @@
 import {SELECTED_CATEGORY_ACTION} from "./constants";
-import { Category, SelectedCategory} from "../../api";
+import { Category} from "../../api";
 import { Api } from "../../api";
 //import { useSelector } from "react-redux";
 //import { SelectedCategorySelectors } from "./index";
