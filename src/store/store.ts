@@ -1,18 +1,13 @@
-import { combineReducers, createStore } from "redux";
+import { combineReducers, createStore, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
+import { reducer as reducerCategory} from "./categoreisSlice";
+import { reducer as reducerPopularCategories} from "./popularCategoriesSlice";
+import { reducer as reducerSelectedCategory} from "./selectedCategorySlice";
+import { reducer as reducerProduct} from "./ProductSlice";
 
 const INITIAL_STATE = {
    categories: [
-    {id: 1, type: "entertainment", label: "Развлечения, творчество"},
-    {id: 2, type: "family", label: "Детям и мамам"},
-    {id: 3, type: "souvenirs", label: "Сувениры, галантерея, одежда"},
-    {id: 4, type: "books", label: "Книги"},
-    {id: 5, type: "cosmetics", label: "Косметика, парфюмерия"},
-    {id: 6, type: "goods", label: "Продукты, деликатесы"},
-    {id: 7, type: "house", label: "Дом, сад, зоотовары"},
-    {id: 8, type: "technics", label: "Техника, электроника"},
-    {id: 9, type: "study", label: "Канцтовары, учеба"},
-    {id: 10, type: "tourism", label: "Туризм, отдых, спорт"},
-    {id: 11, type: "health", label: "Здоровье, медтехника"},
+
 ],
 goodCategories: [
     {
@@ -998,10 +993,10 @@ goodCategories: [
 }
 
 const COUNTER_CART = {
-  value: 25
+  value: 0
 }
 
-const reducerCategory = (state = INITIAL_STATE) => {
+const reducerSome = (state = INITIAL_STATE) => {
     return state
 }
 
@@ -1009,8 +1004,14 @@ const reducerCart = (state = COUNTER_CART) => {
   return state
 }
 
-const rootReducer = combineReducers({reducerCategory, reducerCart})
+const rootReducer = combineReducers({
+  reducerCategory, 
+  reducerPopularCategories, 
+  reducerSelectedCategory, 
+  reducerProduct, 
+  reducerCart, 
+  reducerSome})
 
-export const store = createStore(rootReducer);
+export const store = createStore(rootReducer, applyMiddleware(thunk));
 
 export type RootState = ReturnType<typeof store.getState>

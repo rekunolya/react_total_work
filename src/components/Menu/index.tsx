@@ -1,1 +1,1 @@
-export {MenuSide} from './Menu'
+export {Menu} from './Menu'

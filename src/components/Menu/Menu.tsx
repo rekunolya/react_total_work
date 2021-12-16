@@ -1,31 +1,38 @@
-import {Menu} from 'antd'
-import React from 'react'
-import css from './style.module.css'
-import {Link} from 'react-router-dom'
+import {Menu as MenuAntd} from 'antd';
+import React, { useEffect } from 'react';
+import css from './style.module.css';
+import {Link} from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { fetchCategories } from '../../store/categoreisSlice';
+import { CategoriesSelectors } from "../../store/categoreisSlice";
+import { useSelector } from 'react-redux';
 
-interface MenuProps {
-categories: {id: number; type: string; label: string}[]
-}
+export const Menu: React.FC  = () => {
 
-export class MenuSide extends React.Component<MenuProps> {
+    const categories = useSelector(CategoriesSelectors.getCategories)
+    const dispatch = useDispatch()
 
+    useEffect (() => {
+        dispatch(fetchCategories());
+    }, [dispatch])
 
-    render() {
         return (
             <div className = {css.menu}>
-                <Menu mode = "vertical">
-                   {this.props.categories.map((item)=>{
+                <MenuAntd mode = "vertical">
+                   {categories.map((item)=>{
                        return (
-                               <Menu.Item className = {css.menu__item}>
-                                   <Link to = {`/${item.type}`}>
+                               <MenuAntd.Item className = {css.menu__item}>
+                                   <Link to = {`/${item.id}`} key = {item.id}>
                                        {item.label}
                                    </Link>
-                               </Menu.Item>    
+                               </MenuAntd.Item>    
                        )
                    })
                    } 
-                </Menu>        
+                </MenuAntd>        
             </div>
         )
-    }
-}
+    };
+
+
+

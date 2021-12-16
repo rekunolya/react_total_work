@@ -1,51 +1,50 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import css from './style.module.css'
-import { useParams, useNavigate } from 'react-router'
-import { Selectors } from "../../store"
-import { useSelector } from 'react-redux';
-import { Card } from '../Card';
+import { useParams, useNavigate } from 'react-router';
+import { SelectedCategorySelectors } from '../../store/selectedCategorySlice';
+import {CategoriesSelectors} from '../../store/categoreisSlice'
+import { useSelector, useDispatch } from 'react-redux';
+//import { Card } from '../Card';
 import { ButtonBack } from '../ButtonBack';
 import { Header } from '../Header';
 import { Footer } from '../Footer';
-
-
-
+import { fetchSelectedCategory } from '../../store/selectedCategorySlice';
 
 export function CategoryPage () {
-    const categories = useSelector(Selectors.getGoodCategories);
-    const { type } = useParams();
-    const category =  categories.find((el: any) => el.category.type === type);
+  const category = useSelector(SelectedCategorySelectors.getSelectedCategory)
+  //  const category = useSelector(CategoriesSelectors.getCategories)
+    console.log ("категория", category)
+    const { id } = useParams();
+    console.log ("id", id);
+       
     const navigate = useNavigate();
-
-    if (!category) {
+    const dispatch = useDispatch();
+     
+    useEffect (() => {
+       dispatch(fetchSelectedCategory(id));
+    }, [dispatch, id])
+ 
+     if (!id) {
         return (
             <div>
-                <h2 className = {css.text}> Category is not found, <ButtonBack onClick = {() => navigate(-1)} className = {css.button} title = "come back"/>  </h2>
-                
+                <h2 className = {css.text}> Category is not found, <ButtonBack onClick = {() => navigate(-1)} className = {css.button} title = "come back"/>  </h2>   
             </div>
         )
     }
-
-  
+    console.log("категория после условия", category)
         return (
             <div className = {css.categoryPage}>
         <section>
             <Header/>
-            <div className = {css.title}> <h1> {category?.category.label} </h1></div>
-            <div className = {css.items}>
-
-            {category?.items.map((item:any) => (
-                <Card id={item.id} img={item.img} category_type = {item.category_type} label = {item.label} price = {item.price}/>
-
+            
+                <div>
+                <div className = {css.title}> <h1> text </h1></div>
            
-            ))}
-            </div>   
+                </div>
+           
             <Footer  text = "OOO «Праздник к нам приходит». Свидетельство о регистрации выдано каким-то странным органом от 32.08.2222 с регистрационным номером N968PC69."
-/>
-     
+/>     
         </section>
-        </div>
-           
+        </div>         
         )
- 
 }

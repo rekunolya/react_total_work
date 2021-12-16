@@ -6,6 +6,7 @@ import {Route, Routes} from 'react-router-dom';
 import {NotFoundPage} from './components/NotFoundPage';
 import { CategoryPage } from '../src/components/CategoryPage';
 import { ProductPage } from '../src/components/ProductPage';
+import {PopularCategories} from '../src/components/PopularCategories';
 
 class App extends React.Component {
 
@@ -15,9 +16,12 @@ render() {
     <div className="App">
     <Routes>
       <Route path = "/" element = {<GeneralComponent/>} /> 
-      <Route path = "/"  element = {<NotFoundPage />}/>
+      
+      <Route path = "/:id" element = {<CategoryPage/>}/>
       <Route path="/:type/:id" element={<ProductPage/>} />
-      <Route path = "/:type" element = {<CategoryPage/>}/> 
+      
+       
+      <Route path = "*"  element = {<NotFoundPage />}/>
     </Routes>
     </div>
   );
