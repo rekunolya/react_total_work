@@ -1,7 +1,8 @@
 import { LOAD_STATUSES } from './constants';
-import { Category } from '../../api';
+import {SelectedCategory} from '../../api';
 
-export interface State {
+export type State = {
     loadStatus: LOAD_STATUSES;
-    selectedCategory: Category[]
+    selectedCategory: SelectedCategory;
+
 }

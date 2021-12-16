@@ -1,4 +1,4 @@
-interface Product {
+export type Product = {
     id: string;
     label: string;
     category_type: string;   
@@ -16,10 +16,10 @@ export type PopularCategories = {
      items: Product[], 
  }
 
-//export type SelectedCategory = {
-  //  category: Category,
-    //items: Product[],
-//}
+export type SelectedCategory = {
+    category: Category,
+    items: Product[],
+}
 
  interface Cart {
      value: number;
@@ -57,6 +57,15 @@ export class Api {
             }
         })
     }
+
+    static getProductsSelectedCategory( id: string): Promise<{items: Product[]}> {
+        return fetch(`/api/goods?categoryTypeIds=${id}`).then(r => {
+            if(r.ok) {
+                return r.json()
+            }
+        })
+    }
+    
 
     static getProduct(id: string): Promise<{product: Product[]}> {
         return fetch(`/api/goods?ids=${id}`).then(r => {

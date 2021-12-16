@@ -4,7 +4,7 @@ import { State} from "./type";
 
 const INITIAL_STATE: State = {
     loadStatus: LOAD_STATUSES.UNKNOWN,
-    selectedCategory: []
+    selectedCategory: State
 };
 
 export const reducer = (

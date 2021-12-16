@@ -36,12 +36,12 @@ export function CategoryPage () {
             <div className = {css.categoryPage}>
         <section>
             <Header/>
-            {category.map((cat) => (
+            
                 <div>
-                <div className = {css.title}> <h1> {cat.label} </h1></div>
+                <div className = {css.title}> <h1> text </h1></div>
            
                 </div>
-            ))}
+           
             <Footer  text = "OOO «Праздник к нам приходит». Свидетельство о регистрации выдано каким-то странным органом от 32.08.2222 с регистрационным номером N968PC69."
 />     
         </section>
