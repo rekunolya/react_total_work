@@ -1,8 +1,11 @@
 export type Product = {
+    categoryTypeId: string; 
+    description: string;
     id: string;
+    img: string;
     label: string; 
     price: number; 
-    img: string;
+    
 }
  export type Category = {
      id: string;
@@ -52,7 +55,7 @@ export class Api {
     static getSelectedCategory(id: string): Promise<{categories:Category[]}> {
         return fetch(`/api/categories?ids=${id}`).then(r => {
             if(r.ok) {
-                return r.json()
+               return r.json()
             }
         })
     }
@@ -66,9 +69,10 @@ export class Api {
     }
     
 
-    static getProduct(id: string): Promise<{product: Product[]}> {
+    static getProduct(id: string): Promise<{items: Product[]; total: number}> {
         return fetch(`/api/goods?ids=${id}`).then(r => {
             if(r.ok) {
+                
                 return r.json()
             }
         })

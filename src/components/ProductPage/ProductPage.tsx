@@ -8,15 +8,15 @@ import { ButtonBack } from '../ButtonBack';
 import { Header } from '../Header';
 import { Footer } from '../Footer';
 import { Button } from 'antd';
-//import { SelectedCategorySelectors } from '../../store/selectedCategorySlice';
+import { SelectedCategorySelectors } from '../../store/selectedCategorySlice';
 
 
 export const ProductPage =  () => {
-    //const category = useSelector(SelectedCategorySelectors.getSelectedCategory);
+   // const category = useSelector(SelectedCategorySelectors.getSelectedCategory);
     const product =  useSelector(ProductSelectors.getProduct);
     const navigate = useNavigate();
     const { id } = useParams();
-    console.log('product id', id)
+
     const dispatch = useDispatch();
     //const cat =  products.find((el:any) => el.category.type === type);
     //const product = cat?.items.find((el:any) => el.id === Number(id) );
@@ -25,7 +25,7 @@ export const ProductPage =  () => {
     useEffect(() => {
         dispatch(fetchProduct(id));
     }, [dispatch, id])
-
+    console.log("product", product)
     const actionCart = () => {
 
     }
@@ -46,10 +46,10 @@ export const ProductPage =  () => {
             <Header/>
           
         <div className = {css.card}>
-        <img src = {product.img} alt = ""  className = {css.img}/> 
-        <div  className = {css.label}> {product.label} </div>
-        <div className = {css.price}> {product.price} руб. </div>
-        <div className = {css.discription}> Description </div>
+        <img src = {product[0].img} alt = ""  className = {css.img}/> 
+        <div  className = {css.label}> {product[0].label} </div>
+        <div className = {css.price}> {product[0].price} руб. </div>
+        <div className = {css.discription}> {product[0].description} </div>
         <Button className = {css.addToCart} onClick = {actionCart}> Добавить в корзину </Button>
         </div>
  

@@ -18,7 +18,7 @@ render() {
       <Route path = "/" element = {<GeneralComponent/>} /> 
       
       <Route path = "/:id" element = {<CategoryPage/>}/>
-      <Route path="/:id" element={<ProductPage/>} />
+      <Route path="/good/:id" element={<ProductPage/>} />
       
        
       <Route path = "*"  element = {<NotFoundPage />}/>

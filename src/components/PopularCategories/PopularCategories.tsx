@@ -21,7 +21,7 @@ export const PopularCategories:React.FC  =  () => {
                    <h3 className = {css.title}>{cat.category.label}</h3>
                    <div className = {css.cards}> 
                        {cat.items.map((item) => (
-                           <Card key = {item.id} id={item.id} img={item.img} label = {item.label} price = {item.price}/>
+                           <Card id={item.id} categoryTypeId = {item.categoryTypeId} img={item.img} label = {item.label} price = {item.price} description= {item.description}/>
 
                        ))}
                    </div>

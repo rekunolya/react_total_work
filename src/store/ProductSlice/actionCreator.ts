@@ -15,8 +15,9 @@ export const getProductFailure = () => ({
 export const fetchProduct = (id: any) => async (dispatch: any) => {
     dispatch(getProduct());
     Api.getProduct(id)
-    .then(({product}) => {
-        dispatch(getProductSuccess(product));
+    .then((result) => {
+        console.log("res ", result)
+        dispatch(getProductSuccess(result.items));
     })
     .catch(() => {
         dispatch(getProductFailure())

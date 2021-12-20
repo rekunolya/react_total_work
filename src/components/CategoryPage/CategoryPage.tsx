@@ -36,7 +36,7 @@ export function CategoryPage () {
                 <div className = {css.title}> <h1> {category.category[0].label} </h1></div>
                 <div className={css.items}>
                {category.items.map((item) => (
-                   <Card key = {item.id} id={item.id} img={item.img}  label = {item.label} price = {item.price}/>
+                   <Card  id={item.id} categoryTypeId ={item.categoryTypeId} img={item.img}  label = {item.label} price = {item.price} description= {item.description}/>
                ))}
                 </div>
            
