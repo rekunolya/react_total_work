@@ -1,7 +1,6 @@
 export type Product = {
     id: string;
-    label: string;
-    category_type: string;   
+    label: string; 
     price: number; 
     img: string;
 }
@@ -17,7 +16,7 @@ export type PopularCategories = {
  }
 
 export type SelectedCategory = {
-    category: Category,
+    category: Category[],
     items: Product[],
 }
 
@@ -50,7 +49,7 @@ export class Api {
         })
     }
 
-    static getSelectedCategory(id: string): Promise<{categories:Category}> {
+    static getSelectedCategory(id: string): Promise<{categories:Category[]}> {
         return fetch(`/api/categories?ids=${id}`).then(r => {
             if(r.ok) {
                 return r.json()

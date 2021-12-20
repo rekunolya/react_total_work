@@ -3,6 +3,6 @@ import {SelectedCategory} from '../../api';
 
 export type State = {
     loadStatus: LOAD_STATUSES;
-    selectedCategory: SelectedCategory;
+    selectedCategory: SelectedCategory | null;
 
 }

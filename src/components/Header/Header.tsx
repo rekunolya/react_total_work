@@ -11,7 +11,7 @@ import { Selectors } from "../../store";
 
 export function Header () {
 
-  const count: number = useSelector(Selectors.getCart);
+  //const count: number = useSelector(Selectors.getCart);
 
         
             //const onSearch = value => console.log(value);

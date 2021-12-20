@@ -1,8 +1,8 @@
 import {PRODUCT_ACTION}  from "./constants";
-import {Product} from "./type";
+import {Product} from "../../api";
 import { Api } from "../../api";
 
-export const getProduct = () => ({type: PRODUCT_ACTION.GET_PRODUCT});
+export const getProduct = () => ({type: PRODUCT_ACTION});
 
 export const getProductSuccess = (product: Product[]) => ({
  type: PRODUCT_ACTION.GET_PRODUCT_SUCCESS,
@@ -12,7 +12,7 @@ export const getProductFailure = () => ({
     type: PRODUCT_ACTION.GET_PRODUCT_FAILURE
 })
 
-export const fetchProduct = () => async (dispatch: any, id: string) => {
+export const fetchProduct = (id: any) => async (dispatch: any) => {
     dispatch(getProduct());
     Api.getProduct(id)
     .then(({product}) => {

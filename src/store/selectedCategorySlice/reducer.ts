@@ -4,7 +4,7 @@ import { State} from "./type";
 
 const INITIAL_STATE: State = {
     loadStatus: LOAD_STATUSES.UNKNOWN,
-    selectedCategory: State
+    selectedCategory: null
 };
 
 export const reducer = (
@@ -28,6 +28,12 @@ export const reducer = (
                 selectedCategory: payload,
                 loadStatus: LOAD_STATUSES.LOADED
             };
+        }
+        case SELECTED_CATEGORY_ACTION.GET_SELECTED_CATEGORY_FAILURE: {
+            return{
+                ...state,
+                loadStatus: LOAD_STATUSES.ERROR
+            }
         }
         default:
             return state;
