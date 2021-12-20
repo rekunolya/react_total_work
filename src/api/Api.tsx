@@ -23,7 +23,7 @@ export type SelectedCategory = {
     items: Product[],
 }
 
- interface Cart {
+export interface Cart {
      value: number;
  }
 
@@ -78,9 +78,13 @@ export class Api {
         })
     }
 
-    getCart(): Promise<{value: Cart[]; total: number}> {
-        return fetch('/api/cart').then(r => {
-            if (r.ok) {
+    static putCart(product: Product): Promise<{value: Cart; total: number}> {
+        return fetch('/api/cart', {
+            method: "put",
+            headers: {},
+            body: JSON.stringify(product)
+        }).then(r => {
+            if(r.ok) {
                 return r.json()
             }
         })
