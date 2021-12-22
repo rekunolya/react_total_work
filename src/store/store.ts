@@ -4,15 +4,8 @@ import { reducer as reducerCategory} from "./categoreisSlice";
 import { reducer as reducerPopularCategories} from "./popularCategoriesSlice";
 import { reducer as reducerSelectedCategory} from "./selectedCategorySlice";
 import { reducer as reducerProduct} from "./ProductSlice";
+import { reducer as reducerCart} from "./CartSlice";
 
-
-const COUNTER_CART = {
-  value: 0
-}
-
-const reducerCart = (state = COUNTER_CART) => {
-  return state
-}
 
 const rootReducer = combineReducers({
   reducerCategory, 

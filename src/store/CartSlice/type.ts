@@ -1,6 +1,8 @@
-import {Cart} from '../../api'
+import {Product} from '../../api'
+import { LOAD_STATUSES } from './constants';
 
 
 export interface State {
-    value: Cart
+    loadStatus: LOAD_STATUSES,
+    carts: Product[] | null
 }

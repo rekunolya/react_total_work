@@ -1,16 +1,45 @@
-import {CART_ACTIONS} from './constants'
+import {CART_ACTIONS, BUTTON_TEXT} from './constants';
+import {Product} from '../../api';
+import { Api } from '../../api';
 
+export const setCart = () => ({type: CART_ACTIONS.SET_CART});
 
-export const getCart = () => ({type: CART_ACTIONS.GET_CART})
-
-export const getAddToCart = () => ({
-    type: CART_ACTIONS.GET_ADD_TO_CART
+export const setCartSuccess = (carts: Product[]) => ({
+    type: CART_ACTIONS.SET_CART_SUCCESS,
+    payload: carts,
 })
 
-export const getDeleteFromCart = () => ({
-    type: CART_ACTIONS.GET_DELETE_FROM_CART
-})
+export const setCartFailure = () => ({
+    type: CART_ACTIONS.SET_CART_FAILURE
+});
 
-//export const addToCart = () => async () => {
- //   Api.
-//}
+export const fetchCart = () => async (dispatch: any) => {
+   dispatch(setCart());
+   Api.getCart()
+   .then((res) => {
+       dispatch(setCartSuccess(res.carts));
+   })
+   .catch(() => {
+       dispatch(setCartFailure())
+   });
+}
+
+export const statusCart = (product: Product, status: string) => async (dispatch: any) => {
+    let method ="";
+    if(status === BUTTON_TEXT.DELETE_FROM_CART){
+        method = "delete";
+    } else {
+        method = "put";
+    }
+
+    dispatch(setCart());
+    Api.statusCart(product, method)
+    .then(r => {
+        if(r.ok) {
+            dispatch(fetchCart())
+        }
+    })
+    .catch(() => {
+        dispatch(setCartFailure())
+    })
+}

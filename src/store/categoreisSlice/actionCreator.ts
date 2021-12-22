@@ -6,12 +6,12 @@ export const getCategories = () => ({ type: CATEGORIES_ACTIONS.GET_CATEGORIES});
 
 export const getCategoriesSuccess = (categories: Categories[]) => ({
     type: CATEGORIES_ACTIONS.GET_CATEGORIES_SUCCESS,
-    payload: categories
+    payload: categories,
 });
+
 export const getCategoriesFailure = () => ({
     type: CATEGORIES_ACTIONS.GET_CATEGORIES_FAILURE
 })
-
 
 export const fetchCategories = () => async (dispatch: any) => {
     dispatch(getCategories());

@@ -1,9 +1,10 @@
 import { Action } from "redux";
+import { CART_ACTIONS, LOAD_STATUSES } from "./constants";
 import {State} from './type'
-import { CART_ACTIONS } from "./constants";
 
-const INITIAL_STATE = {
-    value: 0
+const INITIAL_STATE: State = {
+    loadStatus: LOAD_STATUSES.UNKNOWN,
+    carts: null
 }
 
 export const reducer = (
@@ -11,20 +12,30 @@ export const reducer = (
     action: Action<CART_ACTIONS>
 ) => {
     switch(action.type) {
-        case CART_ACTIONS.GET_ADD_TO_CART: {
+        case CART_ACTIONS.SET_CART: {
             return {
                 ...state,
-                value: state.value + 1,
+              loadStatus: LOAD_STATUSES.LOADING
             }
         }
 
-        case CART_ACTIONS.GET_DELETE_FROM_CART: {
+        case CART_ACTIONS.SET_CART_SUCCESS: {
+            const {payload} = action as {
+                type: CART_ACTIONS.SET_CART_SUCCESS;
+                payload: State['carts'];
+            }
+            return {
+                carts: payload,
+                loadStatus: LOAD_STATUSES.LOADED
+            };
+        }
+        case CART_ACTIONS.SET_CART_FAILURE: {
             return {
                 ...state,
-                value: state.value - 1,
-            }
+                loadStatus: LOAD_STATUSES.ERROR
+            };
         }
         default: 
         return state;
     }
-}
+};
