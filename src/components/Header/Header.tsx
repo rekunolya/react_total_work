@@ -4,17 +4,14 @@ import { Badge, Button, Input } from "antd";
 import 'antd/dist/antd.css';
 import '../../App.css';
 import '../../index.css';
+import { CartSelectors } from "../../store/CartSlice";
 import { useSelector } from 'react-redux';
-import { Selectors } from "../../store";
-
 
 
 export function Header () {
 
-  const count: number = useSelector(Selectors.getCart);
+  const count = useSelector(CartSelectors.getCart);
 
-        
-            //const onSearch = value => console.log(value);
         return (
             <div className = {css.header}>
                 <div>
@@ -26,11 +23,8 @@ export function Header () {
                     <ul className = {css.list}>
                         <li> <b> 695-25-25 </b> МТС, А1, Life:) </li>
                         <li> <a href = "/">Закажите звонок</a> или <a href = "/"> Напишите нам </a></li>
-                    </ul>
-                    
+                    </ul> 
                     <Input.Search placeholder="Введите название товара" allowClear className = {css.input}/>
-                  
-
                 </div>
                 <div>
                     <ul className = {css.list}>
@@ -41,7 +35,7 @@ export function Header () {
                     <div className = {css.login}>
                      
                         <Button className = {css.entrance}> Войти </Button>
-                        <Badge count = {0} showZero className = {css.cart}>
+                        <Badge count = {count?.length} showZero className = {css.cart}>
                             <Button> 
                           Корзина 
                        

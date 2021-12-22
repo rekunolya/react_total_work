@@ -4,7 +4,7 @@ import {State} from "./type";
 
 const INITIAL_STATE: State = {
     loadStatus: LOAD_STATUSES.UNKNOWN,
-    product: []
+    product: null
 };
 
 export const reducer = (
